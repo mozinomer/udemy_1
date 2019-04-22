@@ -1,4 +1,28 @@
-<p>
-  courses works!
-  <a href="#">mozinomer</a>
-</p>
+  <div class="card_courses"   *ngFor = "let course of coursesArray;">
+    <div class="row inner_card_main_row">
+      <div class="row img_contain_row">
+        <img [src]="course.image" alt="" width="100%" height="100%">
+      </div>
+      <div class="inner_card_course">
+      <div class="row">
+        <span class="name_course">
+          {{ course.name }}
+        </span>
+      </div>
+      <div class="description">
+        {{ course.description }}
+      </div>
+      <div class="price_row">
+        <div class="price">
+            {{ course.currency }}  {{ course.price }}
+        </div>
+        <div class="old-price">
+           {{ course.currency }} {{ course.old_price }}
+        </div>
+      </div>
+      <div class="best_seller_sticker" *ngIf="course.isBestSeller">
+          best Sller
+      </div>
+      </div>
+    </div>
+  </div>
